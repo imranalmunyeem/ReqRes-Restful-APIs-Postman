@@ -1,0 +1,618 @@
+{
+	"info": {
+		"_postman_id": "5c3c9e03-34b8-4184-bd0b-6d7738fc2c20",
+		"name": "ReqRes-Rest-APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Requests",
+			"item": [
+				{
+					"name": "LIST USER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==200;\r",
+									"tests['Validating Response Body'] =  responseBody.has('page','per_page','total','total_pages','data','support');\r",
+									"\r",
+									"var response = JSON.parse(responseBody);\r",
+									"\r",
+									"//Page\r",
+									"tests['Validating page'] = response.page == 2;\r",
+									"\r",
+									"//Per Page\r",
+									"tests['Validating per_page'] = response.per_page == 6;\r",
+									"\r",
+									"//Total\r",
+									"tests['Validating total'] = response.total == 12;\r",
+									"\r",
+									"//Total Page\r",
+									"tests['Validating total_pages'] = response.total_pages == 2;\r",
+									"\r",
+									"//Data for index 1\r",
+									"tests['Validating data_id'] = response.data[1].id == 9;\r",
+									"tests['Validating data_email'] = response.data[1].email == 'lindsay.ferguson@reqres.in';\r",
+									"tests['Validating data_first_name'] = response.data[1].first_name == 'Lindsay';\r",
+									"tests['Validating data_last_name'] = response.data[1].last_name== 'Ferguson';\r",
+									"tests['Validating data_avatar'] = response.data[1].avatar == 'https://reqres.in/img/faces/8-image.jpg';\r",
+									"\r",
+									"//Data for index 2\r",
+									"tests['Validating data_id'] = response.data[2].id == 9;\r",
+									"tests['Validating data_email'] = response.data[2].email == 'tobias.funke@reqres.in';\r",
+									"tests['Validating data_first_name'] = response.data[2].first_name == 'Tobias';\r",
+									"tests['Validating data_last_name'] = response.data[2].last_name== 'Funke';\r",
+									"tests['Validating data_avatar'] = response.data[2].avatar == 'https://reqres.in/img/faces/9-image.jpg';\r",
+									"\r",
+									"\r",
+									"\r",
+									"//Support Area\r",
+									"tests['Validating url'] = response.support.url == 'https://reqres.in/#support-heading';\r",
+									"tests['Validating text'] = response.support.text == 'To keep ReqRes free, contributions towards server costs are appreciated!';\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users?page=2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SINGLE USER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==200;\r",
+									"tests['Validating Response Body'] =  responseBody.has('data','support');\r",
+									"\r",
+									"//Data Area\r",
+									"var response = JSON.parse(responseBody);\r",
+									"tests['Validating id'] = response.data.id == 2;\r",
+									"tests['Validating first_name'] = response.data.first_name == 'Janet';\r",
+									"tests['Validating last_name'] = response.data.last_name == 'Weaver';\r",
+									"tests['Validating avatar'] = response.data.avatar == 'https://reqres.in/img/faces/2-image.jpg';\r",
+									"\r",
+									"//Support Area\r",
+									"tests['Validating url'] = response.support.url == 'https://reqres.in/#support-heading';\r",
+									"tests['Validating text'] = response.support.text == 'To keep ReqRes free, contributions towards server costs are appreciated!';\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SINGLE USER NOT FOUND",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Respose Code\r",
+									"tests['Validating Status Code'] = responseCode.code ==404;\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/23",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELAYED RESPONSE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Respose Code\r",
+									"tests['Validating Status Code'] = responseCode.code ==200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users?delay=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "delay",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post Requests",
+			"item": [
+				{
+					"name": "CREATE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==201;\r",
+									"tests['Validating Response Body'] =  responseBody.has('name','job','id','createdAt');\r",
+									"\r",
+									"//Data Area\r",
+									"var response = JSON.parse(responseBody);\r",
+									"tests['Validating name'] = response.name == 'morpheus';\r",
+									"tests['Validating job'] = response.job == 'leader';\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER - SUCCESSFUL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==200;\r",
+									"tests['Validating Response Body'] =  responseBody.has('id','token');\r",
+									"\r",
+									"//Data Area\r",
+									"var response = JSON.parse(responseBody);\r",
+									"tests['Validating id'] = response.id == 4;\r",
+									"tests['Validating token'] = response.token == 'QpwL5tke4Pnpja7X4';\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{regEmail}}\",\r\n    \"password\": \"{{regPassword}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{regUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{regUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN - SUCCESSFUL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==200;\r",
+									"tests['Validating Response Body'] =  responseBody.has('token');\r",
+									"\r",
+									"//Data Area\r",
+									"var response = JSON.parse(responseBody);\r",
+									"tests['Validating token'] = response.token == 'QpwL5tke4Pnpja7X4';\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{loginEmail}}\",\r\n    \"password\": \"{{loginPassword}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/{{loginUrl}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"{{loginUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN - UNSUCCESSFUL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==400;\r",
+									"tests['Validating Response Body'] =  responseBody.has('error');\r",
+									"\r",
+									"//Data Area\r",
+									"var response = JSON.parse(responseBody);\r",
+									"tests['Validating error message'] = response.error == 'Missing password';\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"peter@klaven\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Put Requests",
+			"item": [
+				{
+					"name": "UPDATE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==200;\r",
+									"tests['Validating Response Body'] =  responseBody.has('name','job','updatedAt');\r",
+									"\r",
+									"//Data Area\r",
+									"var response = JSON.parse(responseBody);\r",
+									"tests['Validating name'] = response.name == 'morpheus';\r",
+									"tests['Validating job'] = response.job == 'zion resident';\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patch Requests",
+			"item": [
+				{
+					"name": "UPDATE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Type',()=>{\r",
+									"    pm.response.to.be.header('Content-Type','application/json; charset=utf-8');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==200;\r",
+									"tests['Validating Response Body'] =  responseBody.has('name','job','updatedAt');\r",
+									"\r",
+									"//Data Area\r",
+									"var response = JSON.parse(responseBody);\r",
+									"tests['Validating name'] = response.name == 'morpheus';\r",
+									"tests['Validating job'] = response.job == 'zion resident';"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Requests",
+			"item": [
+				{
+					"name": "DELETE",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Headers Area\r",
+									"pm.test('Check Content-Length',()=>{\r",
+									"    pm.response.to.be.header('Content-Length','0');\r",
+									"});\r",
+									"\r",
+									"//Body Area\r",
+									"tests['Validating Status Code'] = responseCode.code ==204;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://reqres.in",
+			"type": "string"
+		}
+	]
+}

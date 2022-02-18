@@ -1,0 +1,629 @@
+{
+	"id": "812e76f7-2ac1-48cf-bb30-b2dc3ab68618",
+	"name": "ReqRes-Rest-APIs",
+	"timestamp": "2022-02-18T21:55:53.110Z",
+	"collection_id": "15813605-5c3c9e03-34b8-4184-bd0b-6d7738fc2c20",
+	"folder_id": 0,
+	"environment_id": "15813605-c102ff44-b3d0-4263-a817-5858d86daab3",
+	"totalPass": 56,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "f262b271-ecad-49f0-8052-c46022ccc770",
+			"name": "LIST USER",
+			"url": "https://reqres.in/api/users?page=2",
+			"time": 627,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true,
+				"Validating Response Body": true,
+				"Validating page": true,
+				"Validating per_page": true,
+				"Validating total": true,
+				"Validating total_pages": true,
+				"Validating data_id": true,
+				"Validating data_email": true,
+				"Validating data_first_name": true,
+				"Validating data_last_name": true,
+				"Validating data_avatar": true,
+				"Validating url": true,
+				"Validating text": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating page": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating per_page": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating total": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating total_pages": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating data_id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating data_email": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating data_first_name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating data_last_name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating data_avatar": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating url": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating text": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				627
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true,
+					"Validating Response Body": true,
+					"Validating page": true,
+					"Validating per_page": true,
+					"Validating total": true,
+					"Validating total_pages": true,
+					"Validating data_id": true,
+					"Validating data_email": true,
+					"Validating data_first_name": true,
+					"Validating data_last_name": true,
+					"Validating data_avatar": true,
+					"Validating url": true,
+					"Validating text": true
+				}
+			]
+		},
+		{
+			"id": "dbf38965-cc02-4396-9fad-e51c2ef82cfa",
+			"name": "SINGLE USER",
+			"url": "https://reqres.in/api/users/2",
+			"time": 475,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true,
+				"Validating Response Body": true,
+				"Validating id": true,
+				"Validating first_name": true,
+				"Validating last_name": true,
+				"Validating avatar": true,
+				"Validating url": true,
+				"Validating text": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating first_name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating last_name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating avatar": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating url": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating text": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				475
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true,
+					"Validating Response Body": true,
+					"Validating id": true,
+					"Validating first_name": true,
+					"Validating last_name": true,
+					"Validating avatar": true,
+					"Validating url": true,
+					"Validating text": true
+				}
+			]
+		},
+		{
+			"id": "0d7fadce-cc4b-40ed-9609-5561a5a554e4",
+			"name": "SINGLE USER NOT FOUND",
+			"url": "https://reqres.in/api/users/23",
+			"time": 483,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Validating Status Code": true
+			},
+			"testPassFailCounts": {
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				483
+			],
+			"allTests": [
+				{
+					"Validating Status Code": true
+				}
+			]
+		},
+		{
+			"id": "b1a8b522-5fde-4757-ba1f-f0de0b8ce5d7",
+			"name": "DELAYED RESPONSE",
+			"url": "https://reqres.in/api/users?delay=3",
+			"time": 3478,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3478
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true
+				}
+			]
+		},
+		{
+			"id": "be4cc068-9d40-42ea-9d8e-892eef95fa1f",
+			"name": "CREATE",
+			"url": "https://reqres.in/api/users",
+			"time": 471,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true,
+				"Validating Response Body": true,
+				"Validating name": true,
+				"Validating job": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating job": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				471
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true,
+					"Validating Response Body": true,
+					"Validating name": true,
+					"Validating job": true
+				}
+			]
+		},
+		{
+			"id": "5cba40ea-b237-4611-8e07-495d2cd2179f",
+			"name": "REGISTER - SUCCESSFUL",
+			"url": "https://reqres.in/api/register",
+			"time": 550,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true,
+				"Validating Response Body": true,
+				"Validating id": true,
+				"Validating token": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				550
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true,
+					"Validating Response Body": true,
+					"Validating id": true,
+					"Validating token": true
+				}
+			]
+		},
+		{
+			"id": "1e886060-db06-42ca-a499-62dd127f4a0d",
+			"name": "LOGIN - SUCCESSFUL",
+			"url": "https://reqres.in/api/login",
+			"time": 455,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true,
+				"Validating Response Body": true,
+				"Validating token": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				455
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true,
+					"Validating Response Body": true,
+					"Validating token": true
+				}
+			]
+		},
+		{
+			"id": "7e637a2c-852f-41a2-b899-a0b8d22cd9bf",
+			"name": "LOGIN - UNSUCCESSFUL",
+			"url": "https://reqres.in/api/login",
+			"time": 496,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true,
+				"Validating Response Body": true,
+				"Validating error message": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				496
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true,
+					"Validating Response Body": true,
+					"Validating error message": true
+				}
+			]
+		},
+		{
+			"id": "ace316c9-ae64-4dbf-913e-7b54380afcba",
+			"name": "UPDATE",
+			"url": "https://reqres.in/api/users/2",
+			"time": 523,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true,
+				"Validating Response Body": true,
+				"Validating name": true,
+				"Validating job": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating job": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				523
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true,
+					"Validating Response Body": true,
+					"Validating name": true,
+					"Validating job": true
+				}
+			]
+		},
+		{
+			"id": "1fdaeecf-473f-4ab9-979c-3eb0a2308c5e",
+			"name": "UPDATE",
+			"url": "https://reqres.in/api/users/2",
+			"time": 541,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Check Content-Type": true,
+				"Validating Status Code": true,
+				"Validating Response Body": true,
+				"Validating name": true,
+				"Validating job": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Type": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Response Body": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating job": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				541
+			],
+			"allTests": [
+				{
+					"Check Content-Type": true,
+					"Validating Status Code": true,
+					"Validating Response Body": true,
+					"Validating name": true,
+					"Validating job": true
+				}
+			]
+		},
+		{
+			"id": "eefe89c6-249a-4ceb-aa3a-d682c2b974e7",
+			"name": "DELETE",
+			"url": "https://reqres.in/api/users/2",
+			"time": 539,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Check Content-Length": true,
+				"Validating Status Code": true
+			},
+			"testPassFailCounts": {
+				"Check Content-Length": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validating Status Code": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				539
+			],
+			"allTests": [
+				{
+					"Check Content-Length": true,
+					"Validating Status Code": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 8638,
+	"collection": {
+		"requests": [
+			{
+				"id": "f262b271-ecad-49f0-8052-c46022ccc770",
+				"method": "GET"
+			},
+			{
+				"id": "dbf38965-cc02-4396-9fad-e51c2ef82cfa",
+				"method": "GET"
+			},
+			{
+				"id": "0d7fadce-cc4b-40ed-9609-5561a5a554e4",
+				"method": "GET"
+			},
+			{
+				"id": "b1a8b522-5fde-4757-ba1f-f0de0b8ce5d7",
+				"method": "GET"
+			},
+			{
+				"id": "be4cc068-9d40-42ea-9d8e-892eef95fa1f",
+				"method": "POST"
+			},
+			{
+				"id": "5cba40ea-b237-4611-8e07-495d2cd2179f",
+				"method": "POST"
+			},
+			{
+				"id": "1e886060-db06-42ca-a499-62dd127f4a0d",
+				"method": "POST"
+			},
+			{
+				"id": "7e637a2c-852f-41a2-b899-a0b8d22cd9bf",
+				"method": "POST"
+			},
+			{
+				"id": "ace316c9-ae64-4dbf-913e-7b54380afcba",
+				"method": "PUT"
+			},
+			{
+				"id": "1fdaeecf-473f-4ab9-979c-3eb0a2308c5e",
+				"method": "PATCH"
+			},
+			{
+				"id": "eefe89c6-249a-4ceb-aa3a-d682c2b974e7",
+				"method": "DELETE"
+			}
+		]
+	}
+}
