@@ -26,9 +26,9 @@ Step 3 --- Install npm (https://www.npmjs.com/package/download)
 
 Step 4 --- Run this command on windows cmd to install newman (npm install -g newman)
 
-Step 5 --- Run this command on windows cmd to install newman html reporter (npm install -g newman-reporter-html)
+Step 5 --- Run this command on windows cmd to install newman html reporter (npm install -g newman-reporter-htmlextra)
 
-Step 6 --- Run this command on windows cmd to run the collection and make html report (newman putcollectionnamehere -r html)
+Step 6 --- Run this command on windows cmd to run the collection and make html report (newman run "putcollectionnamehere" -r htmlextra)
 
 Step 7 --- To get more help on newman, visit here (https://www.npmjs.com/package/newman-reporter-html)
 
@@ -50,24 +50,36 @@ Step 7 --- Go to 'Manage Jenkins' and then "Plugin Manager" and install all the 
 Step 8 --- Click on "New Item" from the left side, Enter project name, select project type as your choice (Recommended: Freestyle)
 
 Step 9 --- Running from local device: 
-           -> Select source code management to NO
-           -> Select 'Execute Windows Batch Command" from 'Build'
-           -> Write the Current project location and collection name 
-                C:\Imran\Testing\API Testing\ReqRes-Restful-APIs-Postman
+           ----> Select source code management to NO
+           
+           ----> Select 'Execute Windows Batch Command" from 'Build'
+           
+           ----> Write the Current project location and collection name 
+                cd C:\Imran\Testing\API Testing\ReqRes-Restful-APIs-Postman
                 newman run collectionname.json
-           -> Save 
-           -> Build Project
-           -> Click on plain text to see the plain view
+                
+           ---> Save
+           
+           ---> Build Project
+           
+           ---> Click on plain text to see the plain view
 
-Step 10 --- Running from Github: 
-           -> Select 'Github Project" from 'General' and put github link
-           -> Select source code management to Git
-           -> Select 'Execute Windows Batch Command" from 'Build'
-           -> Write the Current project location and collection name 
+Step 10 --- Running from Github:
+
+           ---> Select 'Github Project" from 'General' and put github link
+           
+           ---> Select source code management to Git
+           
+           ---> Select 'Execute Windows Batch Command" from 'Build'
+           
+           ---> Write the Current project location and collection name 
                 C:\Imran\Testing\API Testing\ReqRes-Restful-APIs-Postman
                 newman run collectionname.json
-           -> Save 
-           -> Build Project
-           -> Click on plain text to see the plain view
+                
+           ---> Save 
+           
+           ---> Build Project
+           
+           ---> Click on plain text to see the plain view
         
 
